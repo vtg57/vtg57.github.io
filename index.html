@@ -14,13 +14,7 @@
   	 margin: 0;
   	 height:100%;
   	 overflow: hidden;
-      opacity: 1;
-      transition: 1s opacity;
   	  }
-  body.fade-out {
-    opacity: 0;
-    transition: none;
-     }
   .rectangle{
   	width:1335px;
   	height:794px;
@@ -140,7 +134,27 @@
 </head>
 	
 <body scroll="no" background="background.png">
-  <script>document.body.className += ' fade-out';</script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+  jQuery('body').css('display','none');
+  jQuery(document).ready(function() {
+    jQuery('body').fadeIn();
+    jQuery('a').on('click',function(event){
+      var thetarget = this.getAttribute('target')
+      if (thetarget != "_blank"){     
+        var thehref = this.getAttribute('href')
+        event.preventDefault();
+        jQuery('body').fadeOut(function(){
+          //alert(thehref)
+          window.location = thehref         
+        });
+      }
+    });
+  });
+  setTimeout(function(){
+    jQuery('body').fadeIn();
+  },1000)
+</script>
   <div id="particles-js"></div>
   <div class="rectangle">
   <h1 class="naglowek">JAKUB MARCINKOWSKI</h1>
