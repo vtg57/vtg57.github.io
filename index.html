@@ -14,6 +14,8 @@
   	 margin: 0;
   	 height:100%;
   	 overflow: hidden;
+      opacity: 1;
+      transition: 1s opacity;
   	  }
   .rectangle{
   	width:1335px;
@@ -134,6 +136,7 @@
 </head>
 	
 <body scroll="no" background="background.png">
+  <script>document.body.className += ' fade-out';</script>
   <div id="particles-js"></div>
   <div class="rectangle">
   <h1 class="naglowek">JAKUB MARCINKOWSKI</h1>
